@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Formulario = () => {
+const Formulario = ({guardarBusquedaLetra}) => {
     
     const [busqueda, guardarBusqueda] = useState({
         artista: '',
@@ -26,6 +26,7 @@ const Formulario = () => {
         }
         guardarError(false);
         //todo bien, pasar al componente principal
+        guardarBusquedaLetra(busqueda);
     }
 
     return ( 
@@ -41,11 +42,11 @@ const Formulario = () => {
 
                             <div className="row">
                                 <div className="col-md-6">
-                                    <div className="form-group">
+                                    <div className="form-group ms-3">
                                         <label>Artista</label>
                                         <input 
                                             tipe="text"
-                                            className="form-control"
+                                            className="form-control "
                                             name="artista"
                                             placeholder="Nombre Artista"
                                             onChange={actualizarState}
@@ -55,11 +56,11 @@ const Formulario = () => {
                                     
                                 </div>
                                    <div className="col-md-6">
-                                        <div className="form-group">
+                                        <div className="form-group me-3">
                                             <label>Cancion</label>
                                             <input 
                                                 tipe="text"
-                                                className="form-control"
+                                                className="form-control "
                                                 name="cancion"
                                                 placeholder="Nombre Cancion"
                                                 onChange={actualizarState}
@@ -68,10 +69,10 @@ const Formulario = () => {
                                         </div>
                                    </div>
                             </div>
-                            <div className="d-grid gap-2 col-6 mx-auto mt-2">    
+                            <div className="d-grid gap-2 col-6 mx-auto mt-2 mb-2">    
                             <button
                                 type="submit"
-                                className="btn btn-info btn-sm"
+                                className="btn btn-info  btn-lg"
                             >
                                 Buscar
                             </button>
